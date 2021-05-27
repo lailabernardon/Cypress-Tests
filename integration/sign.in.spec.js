@@ -15,8 +15,8 @@ describe('autenticação', () => {
     //outra forma de logar, usando atributos:
     //cy.get('[href*=login]').click();
     //definir o usuáriocriado por você
-    const user = 'teste@outlook.com';
-    const pass = 'teste';
+    const user = 'laila.bernardon@outlook.com';
+    const pass = 'B3rn4rd0n20!';
 
     //informar usuário e senha
     cy.get('input[type=email]').type(user);

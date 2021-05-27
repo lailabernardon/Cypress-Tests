@@ -21,8 +21,8 @@ describe('Artigos', () => {
     //outra forma de logar, usando atributos:
     //cy.get('[href*=login]').click();
     //definir o usuáriocriado por você
-    const user = 'teste@outlook.com';
-    const pass = 'teste';
+    const user = 'laila.bernardon@outlook.com';
+    const pass = 'B3rn4rd0n20!';
 
     //informar usuário e senha
     cy.get('input[type=email]').type(user);
@@ -41,17 +41,14 @@ describe('Artigos', () => {
       .should('contain.text', 'Your Feed');
 
     cy.get('a[href$=editor]').click();
-    cy.get('input[placeholder="Article title"]').clear();
     cy.get('input[placeholder="Article title"]').type('Tests');
-    cy.get('input[placeholder="What is this article about?"]').clear();
     cy.get('input[placeholder="What is this article about?"]').type(
       'Testing cypress'
     );
     cy.get('form textarea').type('Test test e tests');
-    cy.get('input[placeholder="Enter tags"]').click();
     cy.get('input[placeholder="Enter tags"]').type('Tests');
     cy.get('button.btn-primary').contains('Publish article').click();
-    cy.get('h1').click();
+    cy.get('h1').should('contain.text', 'Tests');
     /* ==== End Cypress Studio ==== */
   });
 });
